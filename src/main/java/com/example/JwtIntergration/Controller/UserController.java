@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class UserController {
     @Autowired
@@ -22,6 +24,12 @@ public class UserController {
     System.out.println("controller login");
         return serviceImplementation.verify(users);
         }
+
+
+    @GetMapping("/get")
+    public List<Users> get(){
+        return serviceImplementation.get();
+    }
 
 
 }
